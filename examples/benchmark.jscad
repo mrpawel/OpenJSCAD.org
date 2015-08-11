@@ -8,7 +8,7 @@ function main() {
    var p = { 'spheres': sphere, 'cubes': cube, 'cylinders': cylinder, 'torus': torus };
    var o = [];
    var sum = 0;
-   echo("OpenJSCAD "+me.toUpperCase()+" "+version+" Benchmark");
+   //echo("OpenJSCAD "+me.toUpperCase()+" "+version+" Benchmark");
    for(var i in p) {
       var n = 10;
       var start = new Date();
