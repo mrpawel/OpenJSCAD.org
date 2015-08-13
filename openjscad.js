@@ -70,41 +70,10 @@ OpenJsCad.Viewer = function(containerelement, initialdepth) {
   this.gl.polygonOffset(1, 1);
 
   // Black shader for wireframe
-  this.blackShader = new GL.Shader('\
-    void main() {\
-      gl_Position = gl_ModelViewProjectionMatrix * gl_Vertex;\
-    }', '\
-    void main() {\
-      gl_FragColor = vec4(0.0, 0.0, 0.0, 0.1);\
-    }'
-  );
+  this.blackShader = Config.getLinesShader();
 
   // Shader with diffuse and specular lighting
-  this.lightingShader = new GL.Shader('\
-      varying vec3 color;\
-      varying float alpha;\
-      varying vec3 normal;\
-      varying vec3 light;\
-      void main() {\
-        const vec3 lightDir = vec3(1.0, 2.0, 3.0) / 3.741657386773941;\
-        light = lightDir;\
-        color = gl_Color.rgb;\
-        alpha = gl_Color.a;\
-        normal = gl_NormalMatrix * gl_Normal;\
-        gl_Position = gl_ModelViewProjectionMatrix * gl_Vertex;\
-      }',
-     '\
-      varying vec3 color;\
-      varying float alpha;\
-      varying vec3 normal;\
-      varying vec3 light;\
-      void main() {\
-        vec3 n = normalize(normal);\
-        float diffuse = max(0.0, dot(light, n));\
-        float specular = pow(max(0.0, -reflect(light, n).z), 10.0) * sqrt(diffuse);\
-        gl_FragColor = vec4(mix(color * (0.3 + 0.7 * diffuse), vec3(1.0), specular), alpha);\
-      }'
-  );
+  this.lightingShader = Config.getWorldShader();
 
   var _this=this;
 
@@ -411,46 +380,7 @@ OpenJsCad.Viewer.prototype = {
             gl.vertex(x, plate/2, 0);
          }
       }
-      if(0) {
-         //X - red
-         gl.color(1, 0.5, 0.5, 0.2); //negative direction is lighter
-         gl.vertex(-100, 0, 0);
-         gl.vertex(0, 0, 0);
-   
-         gl.color(1, 0, 0, 0.8); //positive direction
-         gl.vertex(0, 0, 0);
-         gl.vertex(100, 0, 0);
-         //Y - green
-         gl.color(0.5, 1, 0.5, 0.2); //negative direction is lighter
-         gl.vertex(0, -100, 0);
-         gl.vertex(0, 0, 0);
-   
-         gl.color(0, 1, 0, 0.8); //positive direction
-         gl.vertex(0, 0, 0);
-         gl.vertex(0, 100, 0);
-         //Z - black
-         gl.color(0.5, 0.5, 0.5, 0.2); //negative direction is lighter
-         gl.vertex(0, 0, -100);
-         gl.vertex(0, 0, 0);
-   
-         gl.color(0.2, 0.2, 0.2, 0.8); //positive direction
-         gl.vertex(0, 0, 0);
-         gl.vertex(0, 0, 100);
-      }
-      if(0) {
-         gl.triangle();
-         gl.color(0.6, 0.2, 0.6, 0.2); //positive direction
-         gl.vertex(-plate,-plate,0);
-         gl.vertex(plate,-plate,0);
-         gl.vertex(plate,plate,0);
-         gl.end();
-         gl.triangle();
-         gl.color(0.6, 0.2, 0.6, 0.2); //positive direction
-         gl.vertex(plate,plate,0);
-         gl.vertex(-plate,plate,0);
-         gl.vertex(-plate,-plate,0);
-         gl.end();
-      }
+
       gl.end();
       gl.disable(gl.BLEND);
       // GL.Mesh.plane({ detailX: 20, detailY: 40 });
