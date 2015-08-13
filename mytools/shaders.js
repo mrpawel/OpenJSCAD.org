@@ -58,7 +58,7 @@ Shaders.getDepthShader = function(){ //depth shader for shadows - see http://eva
  ');
 };
 
-Shaders.getDepthShaderShallow = function(){ //depth shader for fog 
+Shaders.getDepthShaderShallow = function(){ //depth shader for fog
     return new GL.Shader('\
      varying vec4 pos;\
      void main() {\
@@ -68,8 +68,7 @@ Shaders.getDepthShaderShallow = function(){ //depth shader for fog
      varying vec4 pos;\
      void main() {\
         float depth =  pow(pos.z / pos.w , 30.0);\
-        float depthC = depth ;\
-        gl_FragColor = vec4(depthC,depthC,depthC,1.0);\
+        gl_FragColor = vec4(depth,depth,depth,1.0);\
      }\
  ');
 };
