@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3bd81574-8bb0-4a0c-a1f0-f1a6e2e17a5a" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mytools/Config.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mytools/shaders.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/myscripts/app1.jscad" afterPath="$PROJECT_DIR$/myscripts/app1.jscad" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/openjscad.js" afterPath="$PROJECT_DIR$/openjscad.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mytools/shaders.js" afterPath="$PROJECT_DIR$/mytools/shaders.js" />
     </list>
     <ignored path="OpenJSCAD.org.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -72,8 +66,8 @@
       <file leaf-file-name="shaders.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/mytools/shaders.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.63190186" vertical-offset="623" max-vertical-offset="1275">
-              <caret line="69" column="45" selection-start-line="69" selection-start-column="43" selection-end-line="69" selection-end-column="45" />
+            <state vertical-scroll-proportion="0.42484662" vertical-offset="623" max-vertical-offset="1275">
+              <caret line="60" column="67" selection-start-line="60" selection-start-column="67" selection-end-line="60" selection-end-column="67" />
               <folding />
             </state>
           </provider>
@@ -543,8 +537,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/mytools/shaders.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.63190186" vertical-offset="623" max-vertical-offset="1275">
-          <caret line="69" column="45" selection-start-line="69" selection-start-column="43" selection-end-line="69" selection-end-column="45" />
+        <state vertical-scroll-proportion="0.42484662" vertical-offset="623" max-vertical-offset="1275">
+          <caret line="60" column="67" selection-start-line="60" selection-start-column="67" selection-end-line="60" selection-end-column="67" />
           <folding />
         </state>
       </provider>

@@ -42,7 +42,7 @@ Shaders.getDiffuseSpecularShader = function(){ //original JSCAD diffuse shader
     );
 };
 
-Shaders.getDepthShader = function(){ //see http://evanw.github.io/lightgl.js/tests/shadowmap.html
+Shaders.getDepthShader = function(){ //depth shader for shadows - see http://evanw.github.io/lightgl.js/tests/shadowmap.html
   return new GL.Shader('\
      varying vec4 pos;\
      void main() {\
@@ -58,7 +58,7 @@ Shaders.getDepthShader = function(){ //see http://evanw.github.io/lightgl.js/tes
  ');
 };
 
-Shaders.getDepthShaderShallow = function(){ //see http://evanw.github.io/lightgl.js/tests/shadowmap.html
+Shaders.getDepthShaderShallow = function(){ //depth shader for fog 
     return new GL.Shader('\
      varying vec4 pos;\
      void main() {\
@@ -68,7 +68,7 @@ Shaders.getDepthShaderShallow = function(){ //see http://evanw.github.io/lightgl
      varying vec4 pos;\
      void main() {\
         float depth =  pow(pos.z / pos.w , 30.0);\
-        float depthC = depth * 0.5 + 0.5;\
+        float depthC = depth ;\
         gl_FragColor = vec4(depthC,depthC,depthC,1.0);\
      }\
  ');
